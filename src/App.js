@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-
+import SearchBar from "./component/SearchBar";
 import { Weather } from "./component/Weather";
 
 export default function App() {
@@ -12,17 +12,17 @@ export default function App() {
   }
   function handleCity(event) {
     event.preventDefault();
-    if (inputCity) {
-      setCity(inputCity);
-    } else {
-      alert("Please enter a valid city name!");
-    }
+    setCity(inputCity);
   }
 
   return (
     <div className="App">
       <h1>Weather Search Engine</h1>
-
+      <SearchBar
+        inputCity={inputCity}
+        updateCity={updateCity}
+        handleCity={handleCity}
+      />
       <Weather city={city} />
     </div>
   );
