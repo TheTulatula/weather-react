@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import axios from "axios";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ export function Weather(props) {
     setIcon(response.data.weather[0].icon);
   }
 
-  let ApiKey = "a969311cfcbb4a83dfad2cf7478397f9";
+  let ApiKey = "ca0db41e2e878c74a1dfc7ffece370d4";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${ApiKey}&units=metric`;
   axios.get(url).then(showWeatherData);
 
